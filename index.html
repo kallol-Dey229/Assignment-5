@@ -1,11 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GitHub issue tracker | Login</title>
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <!-- Tailwind + DaisyUI -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- icon -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+
 </head>
-<body>
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <div class="logo w-[180px] mx-auto pt-15 pl-10">
+        <img src="./assets/github-logo.png" alt="">
+    </div>
+
+    <div class="">
+        <h3 class="ml-27 mt-8 text-[26px]">GitHub Issues Tracker</h3>
+        <p class="ml-31 text-[16px] text-gray-500">Sign in to manage your issues</p>
+    </div>
+
+
+    <!-- Form -->
+
+    <div class="form pt-3">
+      <div class="card w-full shrink-0">
+      <div class="card-body">
+        <fieldset class="fieldset ">
+          <label class="label text-neutral text-[13px] font-bold">Username</label>
+          <input id="username-input" type="text" class="input rounded-md w-full" placeholder="Enter Username" />
+          <span class="text-primary">Default: admin</span>
+
+          <br>
+
+          <label class="label text-neutral text-[13px] font-bold">Password</label>
+          <input id="password-input" type="password" class="input rounded-md w-full" placeholder="Enter Password" />
+          <span class="text-primary">Default: admin123</span>
+          
+          <button id="signin-btn" class="btn btn-primary mt-4 rounded-md">Signup</button>
+        </fieldset>
+      </div>
+    </div>
+    </div>
+
+    <br>
+
+    <hr class="ml-7 w-40 text-gray-300 inline-block mr-4"><span class="inline-block">OR</span>
+    <hr class="ml-3 w-45 text-gray-300 inline-block mr-4">
+
+    <br>
+
+    <div class="mt-15 ml-36 space-y-2">
+        <p class="text-gray-400 mb-8">Demo Credentials:</p>
+        <p><span class="font-bold">Username: </span>admin</p>
+        <p><span class="font-bold">Password: </span>admin123</p>
+    </div>
+
     
+
+
+    <script src="Script/login.js"></script>
+
 </body>
+
 </html>
