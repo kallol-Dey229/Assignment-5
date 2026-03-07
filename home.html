@@ -29,7 +29,92 @@
     </style>
 
 </head>
-<body>
+<body class="bg-[#f3f3f5]">
+
+    <!-- navbar -->
+
+    <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1 flex space-x-6">
+    <img class="ml-5 w-[40px]" src="./assets/github-logo.png" alt="">
+    <h2 class="font-bold text-2xl">GitHub Issues Tracker</h2>
+  </div>
+  <div class="flex gap-2">
+    <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issue</button>
+  </div>
+</div>
+
+
+<!-- choose section -->
+
+<div class="mx-auto bg-white mt-14 p-5 w-9/12 rounded-md space-x-2">
+    <button class="btn btn-primary btn-outline">All</button>
+    <button class="btn btn-primary btn-outline">Open</button>
+    <button class="btn btn-primary btn-outline">Closed</button>
+</div>
+
+
+
+<!-- card count -->
+
+<div class="mx-auto bg-white p-5 w-9/12 mt-2 rounded-sm flex justify-between">
+    <div class="left flex gap-3">
+        <div class="img h-10 w-10 p-1 rounded-full bg-blue-100">
+            <img src="./assets/Aperture.png" alt="">
+        </div>
+
+        <div class="img-text">
+            <h2 class="text-xl font-bold">50 Issues</h2>
+            <p class="text-gray-500">Track and manage your project issues</p>
+        </div>
+
+    </div>
+
+    <div class="right flex gap-6">
+        <div class="open flex gap-2">
+            <div class="flex text-center items-center"><img src="./assets/Ellipse 2 (1).png" alt=""></div>
+            <div class="flex text-center items-center font-semibold">Open</div>
+        </div>
+        <div class="close flex gap-2">
+            <div class="flex text-center items-center"><img src="./assets/Ellipse 2.png" alt=""></div>
+            <div class="flex text-center items-center font-semibold">Closed</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- card section -->
+
+<section id="card-conatiner" class="mx-auto bg-white mt-1 p-5 w-9/12 grid grid-cols-4 gap-3">
+    <div class="card bg-white shadow-sm space-y-6 p-5">
+        <div class="card-header flex justify-between">
+            <img class="" src="./assets/Open-Status.png" alt="">
+            <button class="btn btn-error btn-soft rounded-full px-7 py-0">High</button>
+        </div>
+        <div class="card-text space-y-2">
+            <h2 class="text-xl font-bold">Fix navigation menu on mobile devices</h2>
+            <p class="text-gray-600">The navigation menu doesn't collapse properly on mobile devices...</p>
+        </div>
+
+        <div class="bug-help-btn">
+            <button class="btn btn-error btn-outline rounded-full">BUG</button>
+            <button class="btn btn-outline btn-warning rounded-full">HELP WANTED</button>
+
+        </div>
+        <hr class="bg-gray-300">
+        <div class="card-bottom space-y-2">
+            <p class="text-gray-600">#1 by john_doe</p>
+            <p class="text-gray-600">1/15/2024</p>
+        </div>
+    </div>
+    
+</section>
     
 </body>
 </html>
