@@ -72,7 +72,7 @@ const toggleStyle = (id) => {
     closeButton.classList.remove('bg-blue-800', 'text-white');
 
 
-    //adding new classes to al button
+    //adding new classes to all button
     allButton.classList.add('btn', 'btn-primary', 'btn-soft');
     openButton.classList.add('btn', 'btn-primary', 'btn-soft');
     closeButton.classList.add('btn', 'btn-primary', 'btn-soft');
@@ -87,10 +87,6 @@ const toggleStyle = (id) => {
 
 
 
-
-
-
-    //
 
 
 
