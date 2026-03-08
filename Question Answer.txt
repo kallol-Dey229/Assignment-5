@@ -1,0 +1,14 @@
+1️⃣ What is the difference between var, let, and const?
+answer: var is a function scope variable and let, const is a block scope variable. Also var supports hoisting(hoisting means variable can print before it declared) but let and const didn't support hoisting. And after variable declared with let, there have a chance to change the value of the variable after set a value of the variable. But const support a fixed value declaration, the variable set will a fixed value. 
+
+2️⃣ What is the spread operator (...)?
+answer: Spread operator use for convert string to array. It also use for copy a array component to another array.
+
+3️⃣ What is the difference between map(), filter(), and forEach()?
+answer: forEach() does not return anything but map() and filter() does. map() uses for return a new array after doing functionalities but do not make any change in original array. Also filter() uses for return a new array with the element that matches the conditional statement but do not make any changes in original array. 
+
+4️⃣ What is an arrow function?
+answer: arrow function is a short form of function declaration. It can take no parameter or multiple parameters. It does not need any return keyword to return anything. Arrow function is declare with => .
+
+5️⃣ What are template literals?
+answer: Template literals is a way to declare a variable inside a string . It also support multiline comment. Template literals method use backticks(``) instead of single quote('') or dubble quote("").  
