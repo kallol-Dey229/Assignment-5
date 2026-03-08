@@ -225,20 +225,27 @@ loadIssue();
 
 
 
-document.getElementById('btn-search').addEventListener('click', ()=>{
+document.getElementById('btn-search').addEventListener('click', () => {
 
-    removeActive();
     const inputSearch = document.getElementById('input-search');
     const searchValue = inputSearch.value.trim().toLowerCase();
 
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
-    .then(response =>response.json())
+    .then(response => response.json())
     .then(json => {
-        const allWords = json.data;
 
-        const filterWords = allWords.filter(issue => word.word.toLowerCase().includes(searchValue));
+        const allIssues = json.data;
 
-        displayLevelWord(filterWords);
+        const filterIssues = allIssues.filter(issue =>
+            issue.title.toLowerCase().includes(searchValue) ||
+            issue.description.toLowerCase().includes(searchValue) ||
+            issue.author.toLowerCase().includes(searchValue)
+        );
+
+        displayIssue(filterIssues);
+
+        document.getElementById('issue-count').innerText =
+            `${filterIssues.length} Issues`;
     });
 
-})
+});
