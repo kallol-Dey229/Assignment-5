@@ -139,9 +139,9 @@ const displayIssue = (issues) => {
 
         <div class="pt-[5px] rounded-md ${issue.status === "open" ? "bg-green-500" : "bg-purple-500"} ">
 
-        <div class="card bg-white shadow-sm space-y-6 p-5 h-full relative">
+        <div class="card bg-white shadow-sm space-y-6 p-5 h-full">
         
-        <div class="card-header flex justify-between">
+        <div class="card-header flex items-center justify-between">
             <img class="" src="${issue.status ==='open' ? "./assets/Open-Status.png" : "./assets/Closed- Status .png"}" alt="">
             <button onclick ="loadCardDetail(${issue.id})" class="btn ${
             issue.priority === 'high' ? 'btn-error': issue.priority === 'medium'? 'btn-warning' : 'btn-btn-secondary btn-outline text-gray-500'} btn-soft rounded-full px-7 py-0">${issue.priority}
@@ -169,8 +169,6 @@ const displayIssue = (issues) => {
 
 
 const createLabels = (levels) => {
-
-    if(!levels) return "";
 
     const labels = levels.map(level => {
 
@@ -210,20 +208,7 @@ loadIssue();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// search
 
 document.getElementById('btn-search').addEventListener('click', () => {
 
@@ -236,16 +221,11 @@ document.getElementById('btn-search').addEventListener('click', () => {
 
         const allIssues = json.data;
 
-        const filterIssues = allIssues.filter(issue =>
-            issue.title.toLowerCase().includes(searchValue) ||
-            issue.description.toLowerCase().includes(searchValue) ||
-            issue.author.toLowerCase().includes(searchValue)
-        );
+        const filteredIssues = allIssues.filter(issue =>issue.title.toLowerCase().includes(searchValue));
 
-        displayIssue(filterIssues);
+        displayIssue(filteredIssues);
 
         document.getElementById('issue-count').innerText =
-            `${filterIssues.length} Issues`;
+            `${filteredIssues.length} Issues`;
     });
-
 });
