@@ -143,6 +143,7 @@ manageSpinner(true);
 }
 
 
+
 const displayIssue = (issues) => {
     const issueContainer = document.getElementById('issue-container');
     issueContainer.innerHTML = "";
