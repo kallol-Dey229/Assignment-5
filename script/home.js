@@ -1,4 +1,5 @@
 const loadIssue = () =>{
+    manageSpinner(true);
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then((response) => response.json())
     .then((json) => {
@@ -8,11 +9,25 @@ const loadIssue = () =>{
 
 
 const loadCardDetail = (id) =>{
+    manageSpinner(true);
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
     .then((response) => response.json())
     .then((json) => {
         displayWordDetails(json.data);  
     });
+}
+
+
+
+const manageSpinner = (status) =>{
+    if(status== true){
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('issue-container').classList.add('hidden');
+    }
+    else{
+        document.getElementById('issue-container').classList.remove('hidden');
+        document.getElementById('spinner').classList.add('hidden');
+    }
 }
 
 
@@ -54,7 +69,10 @@ const displayWordDetails = (issue) =>{
     </div>
     `;
 
+    manageSpinner(false);
+
     document.getElementById('word_modal').showModal();
+
 }
 
 
@@ -88,7 +106,7 @@ const toggleStyle = (id) => {
 
 
 
-
+manageSpinner(true);
 
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then(res => res.json())
@@ -116,10 +134,10 @@ const toggleStyle = (id) => {
             document.getElementById('issue-count').innerText = `${closedIssues.length} Issues`;
 
         }
+        
+        manageSpinner(false);
 
     });
-
-
 
 
 }
@@ -159,9 +177,9 @@ const displayIssue = (issues) => {
     </div>
         `;
         issueContainer.append(card);
-    })
-
-}
+    });
+manageSpinner(false);
+};
 
 
 const createLabels = (levels) => {
@@ -210,7 +228,7 @@ document.getElementById('btn-search').addEventListener('click', () => {
 
     const inputSearch = document.getElementById('input-search');
     const searchValue = inputSearch.value.trim().toLowerCase();
-
+manageSpinner(true);
     fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then(response => response.json())
     .then(json => {
@@ -223,5 +241,7 @@ document.getElementById('btn-search').addEventListener('click', () => {
 
         document.getElementById('issue-count').innerText =
             `${filteredIssues.length} Issues`;
+
+            manageSpinner(false);
     });
 });

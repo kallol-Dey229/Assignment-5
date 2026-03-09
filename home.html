@@ -36,21 +36,21 @@
     <div class="navbar bg-base-100 shadow-sm">
   <div class="flex-1 flex space-x-6">
     <img class="ml-5 w-[40px]" src="./assets/github-logo.png" alt="">
-    <h2 class="font-bold text-2xl">GitHub Issues Tracker</h2>
+    <h2 class="font-bold text-[13px] md:text-2xl">GitHub Issues Tracker</h2>
   </div>
   <div class="flex gap-2">
     <div class="flex justify-center">
     <div class="join">
   <div>
     <label class="input validator join-item">
-      <input id="input-search" type="text" placeholder="Search issues..." required />
+      <input class="w-20 md:w-45" id="input-search" type="text" placeholder="Search issues..." required />
     </label>
 
   </div>
-  <button id="btn-search" class="btn btn-primary join-item">Search</button>
+  <button id="btn-search" class="btn btn-primary join-item w-15 md:w-20">Search</button>
 </div>
 </div>
-    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i>New Issue</button>
+    <button class="btn btn-primary w-10 text-[10px] md:text-[15px] md:w-35"><i class="fa-solid fa-plus"></i>New Issue</button>
   </div>
 </div>
 
@@ -81,11 +81,11 @@
     </div>
 
     <div class="right flex gap-6">
-        <div class="open flex gap-2">
+        <div class="open md:flex md:gap-2">
             <div class="flex text-center items-center"><img src="./assets/Ellipse 2 (1).png" alt=""></div>
             <div class="flex text-center items-center font-semibold">Open</div>
         </div>
-        <div class="close flex gap-2">
+        <div class="close md:flex md:gap-2">
             <div class="flex text-center items-center"><img src="./assets/Ellipse 2.png" alt=""></div>
             <div class="flex text-center items-center font-semibold">Closed</div>
         </div>
@@ -94,6 +94,12 @@
 
 
 
+
+
+
+<section id="spinner" class="flex justify-center items-center hidden">
+  <span class="loading loading-spinner loading-xl"></span>
+</section>
 
 
 
